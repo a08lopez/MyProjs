@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IlluminatetoEdgenuity.MainPage"
+             BackgroundColor="LightBlue"
+             Title="Edgenuity"
+             >
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Illuminate to Edgenuity Converter"
+               FontAttributes="Bold"></Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <Grid  Margin="30,60">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="*" />
+            <RowDefinition Height ="3*" />
+            <RowDefinition Height =".5*" />
+            <RowDefinition Height ="2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.3*" />
+            <ColumnDefinition Width="2.25*" />
+        </Grid.ColumnDefinitions>
+       
+        <StackLayout>
+            <Label Text="Enter Illuminate Score"  TextColor="Black" FontSize="18"
+                   HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"/>
+            <Entry x:Name="illum"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Keyboard="Numeric"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Placeholder="Illuminate Score"
+                Margin="10,10"
+                BackgroundColor="White"              
+         />
+            <Label Text="Edgenuity Score"  TextColor="Black" FontSize="18"
+                   HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"/>
+            <Entry x:Name="edge"
+                   HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Placeholder="Edgenuity Score"
+                Margin="10,10"
+                BackgroundColor="White"
+                IsReadOnly="True"
+                />
+            <Editor x:Name="success" IsReadOnly="True" AutoSize="TextChanges"/>
+
+        </StackLayout>
+        <Button Text="Convert"
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="10,0"
+                BackgroundColor="Green"
+                TextColor="White"
+                Clicked="Convert_Clicked"
+         />
+        <Button Text="Clear"
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="10,0"
+                BackgroundColor="Red"
+                TextColor="White"
+                Clicked="Clear_Clicked"
+         />
+    </Grid>
+
+</ContentPage>
